@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+	<body>
+
+		<h1>Welcome to Album Tracker</h1>
+
+		<script> var albumArray = [] </script>
+
+		 <p>
+          <label>Please enter an album:</label>
+          <input type = "text"
+                 id = "AlbumName"
+                 value = " "
+                 onFocus="this.value=''"/>
+          <button onclick="saveAlbum()">Submit</button>
+        </p>
+
+		<p id="album"></p>
+
+		<script>
+		function saveAlbum() {
+		  var x = document.getElementById("AlbumName").value;
+		  albumArray.push(x);
+		  document.getElementById('AlbumName').value = "";
+		  document.getElementById("album").innerHTML = albumArray;
+		}
+		</script>
+
+		<script>
+		var input = document.getElementById("AlbumName");
+		input.addEventListener("keyup", function(event) {
+	  		if (event.keyCode === 13) {
+	   			saveAlbum()
+	  		}
+		});
+		</script>
+
+		<button id="shuffle" onclick="getRandomAlbum()" > Press here to recieve an album!</button> 
+
+		<p id="chosenAlbum"></p>
+
+		<script>
+		function getRandomAlbum() {
+		  var len = albumArray.length;
+
+		  if (len == 0) {
+		  	document.getElementById("chosenAlbum").innerHTML = "Please enter an album";
+		  }
+		  else {
+			var random = Math.floor(Math.random() * albumArray.length);
+			document.getElementById("chosenAlbum").innerHTML = albumArray[random];
+		  }
+		}
+		</script>
+
+	</body>
+</html>

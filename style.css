@@ -1,0 +1,23 @@
+*{ 
+  font-family: Tahoma;
+}
+
+h1 {
+  color: #6E7369;
+  text-align: center;
+}
+body {
+  background-color: powderblue;
+  text-align: center;
+  color: #6E354B;
+  font-size: 20px;
+}
+#shuffle {
+	background-color: #EBDEE3;
+	color:#6E354B;
+	font-size: 24px;
+}
+#album {
+	color:#33396F;
+  	text-align: center;
+}
